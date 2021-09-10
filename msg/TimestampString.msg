@@ -1,0 +1,2 @@
+string pub_string
+float64 time_stamp
