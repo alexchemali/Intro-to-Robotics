@@ -199,7 +199,13 @@ def homog_3d(xi, theta):
     low4[0:3,0:3] = rot[0:3,0:3]
     low4[0:3,3] = np.transpose(n2[0:3])
     low4[3,3] = 1
-
+    
+    if omega_len == 0:
+      low4=np.zeros((4,4))
+      low4[0:3,0:3] = i_3
+      low4[0:3,3] = np.transpose(v[0])*theta
+      low4[3,3] = 1
+      
     return low4
 
 def prod_exp(xi, theta):
